@@ -7,10 +7,10 @@ int main()
     float money;
     scanf("%d",&time);
     if (time >= 1500) {
-        money = time*0.9*0.79+0.05;
+        money = time*0.9*0.79;
     }
     else if (time >= 800){
-        money = time*0.9*0.9+0.05;
+        money = time*0.9*0.9;
     }
     else{
         money = time*0.9;
