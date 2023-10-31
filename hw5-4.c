@@ -12,16 +12,25 @@ int main()
     scanf("%d%d",&h,&m);
     ang_h = 30*h + 0.5*m;
     ang_m = 6*m;
-    float ang = ang_h - ang_m;
-    if (ang > 180){
-        printf("%.3f",ang-180);
+    float ang1 = ang_h - ang_m;
+    float ang2 = ang_m - ang_h;
+    if (ang1 > 180){
+        ang1-=180;
     }
-    else if (ang < -180){
-        printf("%.3f",ang+360);
+    else if (ang1 < -180){
+        ang1+=360;
+    }
+    if (ang2 > 180){
+        ang2-=180;
+    }
+    else if (ang2 < -180){
+        ang2+=360;
+    }
+    if (ang1 < ang2 || ang2 < 0){
+        printf("%.3f",ang1);
     }
     else {
-        printf("%.3f",ang);
+        printf("%.3f",ang2);
     }
     return 0;
 }
-
